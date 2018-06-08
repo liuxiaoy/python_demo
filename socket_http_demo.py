@@ -1,7 +1,13 @@
 # Simple HTTPsERVER
 
+import SocketServer
+import SimpleHTTPServer
 import BaseHTTPServer
 import CGIHTTPServer
+import os
+import stat
+
+os.chmod("./cgi-bin/post.py", stat.S_IRWXU | stat.S_IRWXG | stat.S_IXOTH)
 
 HOST = ''
 PORT = 8000
